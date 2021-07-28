@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+
+    <div id="app">
+
+        <!-- {{ changeTitle('burada da kullanılabilir')}} -->
+
+
+        <h1>{{ title }}</h1>
+        <p>{{ content }}</p>
+
+        <a 
+            :href="eduflow.url"
+            :target="eduflow.target"
+            :alt="eduflow.alt"
+
+         >  {{ eduflow.title }} </a>
+
+        <button v-on:click="changeTitle('1.buton')">Title değiştir</button>
+        <button v-on:click="changeTitle('2.buton')">Title değiştir</button>
+
+
+        <div @mousemove="updateCoords($event, 'asdasdasd')" class="box" @click="changeTitle('box uzerinden')"></div>
+        <span>{{ coords.x }},{{ coords.y }}</span>
+
+
+
+    </div> 
+
+
+
+<script src="app.js"></script>
+</body>
+</html>
