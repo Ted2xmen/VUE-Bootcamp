@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conditions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+<div id="app" class="mx-auto">
+
+
+
+    <button 
+        class="text-danger"
+        @click="showContainer =!showContainer">
+        AÇ KAPA
+    </button>
+
+    {{ showContainer }}
+
+    <p v-if="!showContainer">başta görünür</p>
+
+    <!-- aşağıda tekrar if yazmasan da olur onun yerine v-else yeterli. ancak aynı seviyedeki iki element ile kullanılır başka bir divin içerisinde işe yaramaz. -->
+
+    <p v-if="showContainer">başta görünmez</p>
+
+
+    <hr>
+
+    <button @click="counter++">arttır</button>
+    <button @click="counter--">azalt</button>
+    <hr>
+
+    <h1  class="bg-primary" :class="{ 'bg-info text-warning' : counter > 0 ,'bg-danger' : counter < 0 }" > {{counter}} </h1>
+    <!-- bunları computed' ile de gerçekleştirebiliriz. this.counter ekleyerek.. aşağıda  -->
+    <h1  :class="counterBoxClass">  {{counter}} </h1>
+    <!-- app.js üzerinde computed: CounterBoxClass : this.counter > 0 ,'bg-danger' : this.counter < 0 }" -->
+       
+    <hr>
+    <!-- v-if-else de olabilir v-else de olabilir -->
+    <p v-if="counter > 0">counter sıfırdan büyük</p> 
+    <p v-else="">counter 0 ise </p>
+    <p v-if="counter < 0">counter sıfırdan küçük</p>
+
+    <!-- diğer yöntem... css ile..  aşağıdakinde style ekliyor dom üzerinde : display-none-->
+
+     <p v-show="counter > 0">xcounter sıfırdan büyük</p> 
+    <p v-show="">xcounter 0 ise </p>
+    <p v-show="counter < 0">xcounter sıfırdan küçük</p>
+
+</div>
+
+  
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>
