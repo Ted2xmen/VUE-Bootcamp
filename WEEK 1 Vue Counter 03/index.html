@@ -12,21 +12,48 @@
 <body>
 
 
-    
-    <div id="app">
+
+<div id="app" class="container">
+    <div class="row m-5">
+        <div class="col-4 card offset-5 p-2 text-center">
+            <h3>{{ counter }}</h3>  
+                <div class="d-flex justify-content-center align-items-center">
+
+                        <button @click="counter++" class="btn m-1 btn-sm btn-primary">+</button>   
+                        <!-- @click içerisinde "inc()" yerine tek satırlık js kodu da yazabilirsin "counter++" gibi -->
+                        <button @click="counter--" class="btn m-1 btn-sm btn-danger">-</button>  
+
+                </div> 
+
+                <div class="alert alert-warning">
+                    <p>{{ getCounterResult }}</p>
+                    <!-- bu if koşulunu method olarak da yazarak buraya ekleyebilirdik {{ counterGet() gibi bir metod ile }} -->
+                </div>
+
+        </div>
 
 
+        <div class="col-4 card offset-5 p-2 text-center">
+            <h3>{{ counter }}</h3>  
+                <div class="d-flex justify-content-center align-items-center">
 
+                        <button @click="counter++" class="btn m-1 btn-sm btn-primary">+</button>   
+                        <!-- @click içerisinde "inc()" yerine tek satırlık js kodu da yazabilirsin "counter++" gibi -->
+                        <button @click="counter--" class="btn m-1 btn-sm btn-danger">-</button>  
 
+                </div> 
 
+                <div class="alert alert-warning">
+                    <p>{{ getCounter2Result }}</p>
+                    <!-- bu if koşulunu method olarak da yazarak buraya ekleyebilirdik {{ counterGet() gibi bir metod ile }} -->
+                </div>
 
-
-
-
+        </div>
     </div>
+</div>
 
 
 
-<script src="/WEEK 1 Vue Events 02/app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
