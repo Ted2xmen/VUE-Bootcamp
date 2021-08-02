@@ -3,13 +3,14 @@ const app = Vue.createApp({
         return {
             todoList : [
 
-                {id: 1, title: 'Buy Groceries 1', completed: false},
-                {id: 2, title: 'Buy Groceries 2 ', completed: false},
-                {id: 3, title: 'Buy Groceries 3', completed: false},
-                {id: 4, title: 'Buy Groceries 4', completed: false},  
+                {id: 1, title: 'Add New Task', completed: false},
+                // {id: 2, title: 'Buy Groceries 2 ', completed: false},
+                // {id: 3, title: 'Buy Groceries 3', completed: false},
+                // {id: 4, title: 'Buy Groceries 4', completed: false},  
 
             ],
             date : new Date().toLocaleDateString(),
+            clock: new Date().getHours(),
         };
     },
  
@@ -29,7 +30,12 @@ const app = Vue.createApp({
          
             this.todoList = this.todoList.filter(todo => todo !== todoItem)
 
-        }
+        },
+
+
+
+
+        
     },
 
     computed: {
@@ -42,12 +48,14 @@ const app = Vue.createApp({
         allItemCount(){
             return this.todoList.length
         },
-     
+    
 
     }
 
 
 
 
-
 }).mount("#app");    
+
+
+ 

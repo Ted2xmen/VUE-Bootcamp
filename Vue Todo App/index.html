@@ -21,42 +21,58 @@
 
 </header>    
 
-<section>
 
-<div class="container back">
 
-<div class="row bg-warning ">
-    <h2 class="">Vue Todo App</h2>
-   
-    <img src="" alt="">
+
+<section id="app">
+
+<div class="container col-10 back2">
+
+<div class="row bg-warning border border-dark ">
+    <h1 class="p-3 m-2"><img class="p-1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/555px-Vue.js_Logo_2.svg.png" style="width: 70px;" alt="">Vue Todo App    </h1>  
+
+
+    
 </div>
 
 
-<div class="row " id="app">
+<div >
+    
+    
+    <div class="row bg-warning border border-dark ">
+
+
+    <h2 class="m-3" v-if="clock < 18 " :class="{ 'deneme' : clock < 15}" ><img class="" src="" style="width: 70px;" alt="">Good Day 🌞 {{ date }}   </h2>  
+    
+    <h2 class="m-3" v-else=""><img class="" src="" style="width: 70px;" alt="">Good Evening  🌙 {{ date }}   </h2>  
+
+
+    
+</div>
+
+<div class="row m-3 " >
     <form>
         <div class="mb-3">
           <label for="text-1" class="form-label"></label>
-          <input type="text" class="form-control" @keydown.enter="addTodo" placeholder="Add TODO"> 
+          <input type="text" class="form-control" @keydown.enter="addTodo" placeholder="Add New Task..."> 
         </div>
       </form>
 
-<div class="col-md-2 bg-light ">
+<!-- <div class="col-md-2 bg-light "> -->
 
   
-    <nav class="nav flex-column">
-        <span class="p-2 m-3 text-center border border-dark">
-            {{ date }}
-        </span>
+    <nav class="nav flex-column card col-md-2">
+       
         <a class="nav-link active fs-4" aria-current="page" href="#">
-            <i class="bi bi-list-task"style="font-size: 1.5rem;"> Tümü {{ allItemCount }} </i>
+            <i class="bi bi-list-check"style="font-size: 1.5rem;"> v-All:  {{ allItemCount }} </i>
         </a>
  
         <a class="nav-link active fs-4" aria-current="page" href="#">
-            <i class="bi bi-list-task"style="font-size: 1rem;"> Tamamlandı {{ completedItemCount }} </i>
+            <i class="bi bi-check2-square"style="font-size: 1rem;"> v-Done: {{ completedItemCount }} </i>
         </a>
 
         <a class="nav-link active fs-4" aria-current="page" href="#">
-            <i class="bi bi-list-task"style="font-size: 1rem;"> Tamamlanmadı {{ unCompletedItemCount }} </i>
+            <i class="bi bi-check-square-fill"style="font-size: 1rem;"> v-Not Done: {{ unCompletedItemCount }} </i>
         </a>
      
        
@@ -64,8 +80,8 @@
 
 
 
-
-</div>
+<!-- 
+</div> -->
 
 
 
@@ -79,15 +95,15 @@
         <p class="btn btn-warning" v-if="todoList.length === 0 ">Well Done no more work</p>
     </div>
 
-    <li v-for="todo in todoList" :class="{ 'uncomp' : todo.completed, 'comp' :  todo.uncompleted}" class="list-group-item hover mt-2 mb-2 ">
+    <li v-for="todo in todoList" :class="{ 'uncomp' : todo.completed, 'comp' :  todo.uncompleted}" class=" list-group-item hover mt-2 mb-2 ">
         
         <div class="form-check ">
             <input class="form-check-input" type="checkbox" v-model="todo.completed" :id="`checkbox_${todo.id}`"  value="" id="flexCheckChecked" checked>
             <label class="form-check-label" for="flexCheckChecked">
 
-                 {{ todo.title }}    <i class="bi bi-star ms-5"></i>
+              <span :class="{ 'done' : todo.completed}">  {{ todo.title }}  </span>   <i class="bi bi-star ms-5"></i>
                 <button class="btn btn-danger pt-0 pb-0 pe-5 ps-5  ms-5" @click="removeItem(todo)">sil</button>
-                <p class="fst-italic">{{ todo.tarih }}</p>
+                <!-- <p class="fst-italic">{{ todo.tarih }}</p> -->
 
             </label>
           </div>
@@ -124,7 +140,11 @@
 </div>
 
 
+<footer>
+    <div class="container m-4">
 
+        </div>
+</footer>
 
 
 

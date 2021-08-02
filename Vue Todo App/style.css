@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama:wght@200;400&display=swap');
+
+
+body{
+    font-family: 'Georama', sans-serif;
+    font-size: 1.4rem;
+    
+    
+}
+
 .back {
     background: rgb(34,193,195);
     background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(43,125,15,1) 100%); 
@@ -16,13 +26,46 @@
      box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
    }
 
+   .done {
+    text-decoration:line-through;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgb(238, 241, 12);
+
+   }
 
    .uncomp {
-       text-decoration:line-through;
-       background-color: green;
+      
+       background-color: rgb(34, 78, 8);
        color: white;
    }
 
    .comp {
        color: green;
    }
+
+
+   .back2 {
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 10px 10px;
+    border-radius: 30px;
+   }
+
+   input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid rgb(4, 187, 87);
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+.deneme {
+    background-color: #9e9ebe;
+}
+
+.deneme2 {
+    background-color: #d36b16;
+}
